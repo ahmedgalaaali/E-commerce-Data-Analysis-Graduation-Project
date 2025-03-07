@@ -1,3 +1,12 @@
+/*
+This SQL file contains the schema of Ecommerce database,
+all the code that exists is related to PostgrSQL database
+*/;
+
+----------------------------------------------------------------------------------------------
+
+-- Customer Table
+
 CREATE TABLE customer(
                     customer_key VARCHAR(25) PRIMARY KEY,
                     name VARCHAR(50),
@@ -7,6 +16,10 @@ COPY customer(customer_key,name,contact_no,nid)
 FROM 'C:\Mine\My Projects\E-commerce database\CSV Data\customer.csv'
 DELIMITER ','
 CSV HEADER;
+
+----------------------------------------------------------------------------------------------
+
+-- Items Table
 
 CREATE TABLE item(
                 item_key VARCHAR PRIMARY KEY,
@@ -23,6 +36,9 @@ FROM 'C:\Mine\My Projects\E-commerce database\CSV\item.csv'
 DELIMITER ','
 CSV HEADER;
 
+----------------------------------------------------------------------------------------------
+
+-- Stroe Table
 CREATE TABLE store(
                 store_key VARCHAR(25) PRIMARY KEY,
                 division varchar(25),
@@ -33,6 +49,10 @@ COPY store(store_key,division,district,upazila)
 FROM 'C:\Mine\My Projects\E-commerce database\CSV\store.csv'
 DELIMITER ','
 CSV HEADER;
+
+----------------------------------------------------------------------------------------------
+
+-- Time Table
 
 CREATE TABLE time(
                 time_key VARCHAR(25) PRIMARY KEY,
@@ -49,6 +69,10 @@ COPY time(time_key,date,hour,day,week,month,quarter,year,time)
 FROM 'C:\Mine\My Projects\E-commerce database\CSV\time.csv'
 DELIMITER ','
 CSV HEADER;
+
+----------------------------------------------------------------------------------------------
+
+-- Fact Table
 CREATE TABLE fact(
                     payment_key VARCHAR(25),
                     customer_key VARCHAR(25),
@@ -66,6 +90,9 @@ FROM 'C:\Mine\My Projects\E-commerce database\CSV\fact.csv'
 DELIMITER ','
 CSV HEADER;
 
+----------------------------------------------------------------------------------------------
+
+-- Transactions Table
 CREATE TABLE trans(
             payment_key VARCHAR PRIMARY KEY,
             trans_type VARCHAR,
@@ -77,6 +104,9 @@ FROM 'C:\Mine\My Projects\E-commerce database\CSV\trans.csv'
 DELIMITER ','
 CSV HEADER;
 
+----------------------------------------------------------------------------------------------
+
+-- Identifying Foreign Keys
 
 ALTER TABLE fact
 ADD CONSTRAINT fk_payment FOREIGN KEY (payment_key) REFERENCES trans(payment_key),
