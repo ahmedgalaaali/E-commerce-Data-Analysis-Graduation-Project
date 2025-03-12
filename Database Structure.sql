@@ -106,6 +106,7 @@ CSV HEADER;
 
 ----------------------------------------------------------------------------------------------
 
+
 -- Identifying Foreign Keys
 
 ALTER TABLE fact
@@ -114,3 +115,20 @@ ADD CONSTRAINT fk_customer FOREIGN KEY (customer_key) REFERENCES customer(custom
 ADD CONSTRAINT fk_time FOREIGN KEY (time_key) REFERENCES time(time_key),
 ADD CONSTRAINT fk_item FOREIGN KEY (item_key) REFERENCES item(item_key),
 ADD CONSTRAINT fk_store FOREIGN KEY (store_key) REFERENCES store(store_key);
+
+----------------------------------------------------------------------------------------------
+
+ALTER TABLE fact
+DROP CONSTRAINT fk_time;
+
+DROP TABLE time;
+
+CREATE TABLE time(
+                time_key VARCHAR PRIMARY KEY,
+                datetime TIMESTAMP
+);
+
+COPY time(time_key,datetime)
+FROM 'C:\Mine\My Projects\E-commerce database\CSV\time.csv'
+DELIMITER ','
+CSV HEADER;
