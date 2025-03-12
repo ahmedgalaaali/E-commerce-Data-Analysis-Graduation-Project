@@ -26,14 +26,7 @@ erDiagram
     
     TIME {
         varchar time_key PK
-        date date
-        int hour
-        int day
-        int week
-        int month
-        int quarter
-        int year
-        time time
+        datetime datetime
     }
     
     TRANS {
