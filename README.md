@@ -54,9 +54,3 @@ erDiagram
     ITEM ||--o{ FACT : "item_key"
     STORE ||--o{ FACT : "store_key"
 ```
-    TRANS ||--o{ FACT : "payment_key"
-    CUSTOMER ||--o{ FACT : "customer_key"
-    TIME ||--o{ FACT : "time_key"
-    ITEM ||--o{ FACT : "item_key"
-    STORE ||--o{ FACT : "store_key"
-```
