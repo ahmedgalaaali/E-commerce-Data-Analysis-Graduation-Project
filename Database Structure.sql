@@ -10,10 +10,10 @@ all the code that exists is related to PostgrSQL database
 CREATE TABLE customer(
                     customer_key VARCHAR(25) PRIMARY KEY,
                     name VARCHAR(50),
-                    contact_no BIGINT,
-                    nid BIGINT);
+                    contact_no VARCHAR,
+                    nid VARCHAR);
 COPY customer(customer_key,name,contact_no,nid)
-FROM 'C:\Mine\My Projects\E-commerce database\CSV Data\customer.csv'
+FROM 'C:\Mine\My Projects\E-commerce database\CSV\customer.csv'
 DELIMITER ','
 CSV HEADER;
 
@@ -56,16 +56,9 @@ CSV HEADER;
 
 CREATE TABLE time(
                 time_key VARCHAR(25) PRIMARY KEY,
-                date DATE,
-                hour INT,
-                day INT,
-                week INT,
-                month INT,
-                quarter INT,
-                year INT,
-                time TIME);
+                datetime TIMESTAMP);
 
-COPY time(time_key,date,hour,day,week,month,quarter,year,time)
+COPY time(time_key,datetime)
 FROM 'C:\Mine\My Projects\E-commerce database\CSV\time.csv'
 DELIMITER ','
 CSV HEADER;
@@ -81,8 +74,8 @@ CREATE TABLE fact(
                     store_key VARCHAR(25),
                     quantity INT,
                     unit VARCHAR(15),
-                    unit_price MONEY,
-                    total_price MONEY
+                    unit_price FLOAT,
+                    total_price FLOAT
 );
 
 COPY fact(payment_key,customer_key,time_key,item_key,store_key,quantity,unit,unit_price,total_price)
@@ -116,19 +109,37 @@ ADD CONSTRAINT fk_time FOREIGN KEY (time_key) REFERENCES time(time_key),
 ADD CONSTRAINT fk_item FOREIGN KEY (item_key) REFERENCES item(item_key),
 ADD CONSTRAINT fk_store FOREIGN KEY (store_key) REFERENCES store(store_key);
 
-----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
 
-ALTER TABLE fact
-DROP CONSTRAINT fk_time;
+UPDATE trans
+SET bank_name = 'Cash Payment'
+WHERE bank_name = 'Unknown'
 
-DROP TABLE time;
+---------------------------------------------------------------------------------------------
 
-CREATE TABLE time(
-                time_key VARCHAR PRIMARY KEY,
-                datetime TIMESTAMP
-);
+ALTER TABLE item
+ADD COLUMN category VARCHAR
+GENERATED ALWAYS AS (
+    CASE
+        WHEN description LIKE '%Beverage%' THEN 'Beverage'
+        WHEN description LIKE '%Coffee%' THEN 'Coffee Supplies'
+        WHEN description LIKE '%Dishware%' THEN 'Dishware'
+        WHEN description LIKE '%Food%' THEN 'Food'
+        WHEN description LIKE '%Gum%' THEN 'Gum'
+        WHEN description LIKE '%Kitchen Supplies%' THEN 'Kitchen Supplies'
+        WHEN description LIKE '%Medicine%' THEN 'Medicine'
+        ELSE NULL
+    END
+) STORED;
 
-COPY time(time_key,datetime)
-FROM 'C:\Mine\My Projects\E-commerce database\CSV\time.csv'
-DELIMITER ','
-CSV HEADER;
+---------------------------------------------------------------------------------------------
+
+UPDATE item
+SET unit = CASE 
+    WHEN unit IN('ct','ct.', 'Ct') THEN 'count'
+    WHEN unit IN('oz','oz.') THEN 'ounce'
+    WHEN unit = 'pk' THEN 'pack'
+    WHEN unit = 'botlltes' THEN 'bottles'
+    WHEN unit = 'lb' THEN 'pounds'
+    ELSE unit
+END;
