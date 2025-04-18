@@ -4,8 +4,8 @@ erDiagram
     CUSTOMER {
         varchar customer_key PK
         varchar name
-        bigint contact_no
-        bigint nid
+        varchar contact_no
+        varchar nid
     }
     
     ITEM {
@@ -16,6 +16,7 @@ erDiagram
         varchar man_country
         varchar supplier
         varchar unit
+        varchar category
     }
     
     STORE {
@@ -44,8 +45,8 @@ erDiagram
         varchar store_key FK
         int quantity
         varchar unit
-        money unit_price
-        money total_price
+        int unit_price
+        int total_price
     }
     
     TRANS ||--o{ FACT : "payment_key"
