@@ -17,6 +17,7 @@ In this repo we're going to explain what we actually did and how we did it in de
 | Power BI | Dashboard and report |
 | MS PowerPoint | Final presentation |
 
+## Database ERD
 ```mermaid
 erDiagram
     CUSTOMER {
