@@ -198,7 +198,7 @@ END;
 
 ### RFM Customer Segmentation (Part of E-commerce Analysis Project)
 ---
-### 📌 Project Context
+### Project Context
 
 This notebook is a **component of a larger E-commerce Data Analysis Project**.  
 It focuses on segmenting customers based on their **RFM (Recency, Frequency, Monetary)** metrics and applying **KMeans clustering** to derive actionable customer groups.
@@ -207,7 +207,7 @@ This segmentation helps improve marketing, customer retention, and loyalty progr
 
 ---
 
-### 📊 RFM Explanation
+### RFM Explanation
 
 | Metric   | Meaning                             | Calculation                                                  |
 |----------|-------------------------------------|--------------------------------------------------------------|
@@ -217,7 +217,7 @@ This segmentation helps improve marketing, customer retention, and loyalty progr
 
 ---
 
-### 🧮 Steps Followed
+### Steps Followed
 ---
 ### 1. Data Preparation
 - Merged transactional data with time data using `time_key`.
@@ -234,7 +234,7 @@ Combined Recency, Frequency, and Monetary into a single DataFrame `rfm_df`.
 
 ---
 
-### 🔁 Customer Clustering
+### Customer Clustering
 ---
 ### Clustering with KMeans
 - Used `StandardScaler` for normalization.
@@ -249,7 +249,7 @@ rfm_df['Cluster'] = kmeans.fit_predict(rfm_scaled)
 
 ---
 
-## 📈 Visualizations
+## Visualizations
 
 - **2D Seaborn Plots**: Recency vs Frequency & Frequency vs Monetary
 - **3D Plotly Visualization**: Recency vs Frequency vs Monetary
@@ -258,7 +258,7 @@ These plots help visually understand customer clusters and patterns.
 
 ---
 
-## 🔍 Insights from Clustering
+## Insights from Clustering
 
 - **Cluster 3**: High-Value Customers → Low Recency, High Frequency, High Monetary
 - **Cluster 0**: At-Risk Customers → High Recency, Medium Frequency
@@ -268,7 +268,7 @@ These insights can support marketing segmentation and campaign design.
 
 ---
 
-## 🧠 Tools & Libraries
+## Tools & Libraries
 
 - Python, Pandas, NumPy
 - Scikit-learn, Plotly, Seaborn, Matplotlib
