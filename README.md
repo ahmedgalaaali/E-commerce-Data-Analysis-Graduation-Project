@@ -3,7 +3,7 @@ This project aims to put a spotlight on many skills a data analyst should acquir
 
 In this repo we're going to explain what we actually did and how we did it in detail, you can find all the files we used to get this mission accomplished [here](https://github.com/ahmedgalaalali/E-commerce-Data-Analysis-Graduation-Project), and I wish you enjoy the journey because it's going to take a while. HAVE FUN!
 
-## 📑 Navigation
+## Navigation
 
 - [Data Source and Information](#data-source-and-information)
 - [Tools Used](#tools-used)
