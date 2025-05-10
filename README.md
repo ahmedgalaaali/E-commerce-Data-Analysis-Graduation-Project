@@ -22,12 +22,6 @@ In this repo we're going to explain what we actually did and how we did it in de
   - [Insights from Clustering](#insights-from-clustering)
   - [Tools & Libraries](#tools--libraries)
   - [Executive Summary](#executive-summary)
-  - [1. Revenue & Transactional Performance](#1-revenue--transactional-performance)
-  - [2. Category-wise Revenue Breakdown](#2-category-wise-revenue-breakdown)
-  - [3. Time Series Sales Analysis (2014–2021)](#3-time-series-sales-analysis-2014–2021)
-  - [4. Customer Behavior & Growth Insights](#4-customer-behavior--growth-insights)
-  - [5. Key Insights & Strategic Implications](#5-key-insights--strategic-implications)
-  - [6. Recommendations](#6-recommendations)
 
 ## Data Source and Information
 * **Data Source**: [ECommerce Data Analysis](https://www.kaggle.com/datasets/mohainimulislams/ecommerce-data-analysis)
