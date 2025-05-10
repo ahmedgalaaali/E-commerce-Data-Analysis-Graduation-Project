@@ -213,6 +213,10 @@ SET unit = CASE
     ELSE unit
 END;
 ```
+## Phase 3: Database Analysis
+We worked on analyzing the database using a connection between Python and PostgreSQL. A notebook was created to get this job done which could be found [here](https://github.com/ahmedgalaaali/E-commerce-Data-Analysis-Graduation-Project/blob/main/Database%20Analysis.ipynb).
+<br>
+The notebook includes insights and charts that extracts the insights well from the database to make it easier for the stakehoders to find his insights, we also created a report that has the insights and it's recommendations which you could happily find [here](https://github.com/ahmedgalaaali/E-commerce-Data-Analysis-Graduation-Project/blob/main/ECommerce%20Data%20Analysis%20Final%20Report.docx)
 
 ## Predictive Analysis
 
