@@ -3,6 +3,32 @@ This project aims to put a spotlight on many skills a data analyst should acquir
 
 In this repo we're going to explain what we actually did and how we did it in detail, you can find all the files we used to get this mission accomplished [here](https://github.com/ahmedgalaalali/E-commerce-Data-Analysis-Graduation-Project), and I wish you enjoy the journey because it's going to take a while. HAVE FUN!
 
+## 📑 Navigation
+
+- [Data Source and Information](#data-source-and-information)
+- [Tools Used](#tools-used)
+- [Database ERD](#database-erd)
+- [Phase 1: Data Cleaning and Investigations](#phase-1-data-cleaning-and-investigations)
+- [Phase 2: Database Building](#phase-2-database-building)
+  - [SQL Code Details](#sql-code-details)
+    - [Tables creation](#1tables-creation)
+    - [Importing the data](#2-importing-the-data)
+    - [Foreign keys](#3-foreign-keys)
+    - [Changes applied using SQL](#3-changes-applied-using-sql)
+- [Predictive Analysis](#predictive-analysis)
+  - [RFM Customer Segmentation](#rfm-customer-segmentation-part-of-e-commerce-analysis-project)
+  - [Customer Clustering](#customer-clustering)
+- [Visualizations](#visualizations)
+- [Insights from Clustering](#insights-from-clustering)
+- [Tools & Libraries](#tools--libraries)
+- [Executive Summary](#executive-summary)
+  - [1. Revenue & Transactional Performance](#1-revenue--transactional-performance)
+  - [2. Category-wise Revenue Breakdown](#2-category-wise-revenue-breakdown)
+  - [3. Time Series Sales Analysis (2014–2021)](#3-time-series-sales-analysis-2014–2021)
+  - [4. Customer Behavior & Growth Insights](#4-customer-behavior--growth-insights)
+  - [5. Key Insights & Strategic Implications](#5-key-insights--strategic-implications)
+  - [6. Recommendations](#6-recommendations)
+
 ## Data Source and Information
 * **Data Source**: [ECommerce Data Analysis](https://www.kaggle.com/datasets/mohainimulislams/ecommerce-data-analysis)
 * **Information**:
