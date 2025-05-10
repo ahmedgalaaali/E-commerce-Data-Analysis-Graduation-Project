@@ -364,7 +364,7 @@ All customers were added in 2014, with rapid decline month-over-month, implying 
 
 ### Customer Activity (Last Transactions)
 
-| Month     | Unique Customers |
+| Month     | Last Transaction by Unique customers |
 |-----------|------------------|
 | Jun 2020  | 1                |
 | Jul 2020  | 6                |
